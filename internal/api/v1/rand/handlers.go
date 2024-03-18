@@ -2,22 +2,13 @@ package rand
 
 import (
 	"fmt"
-	"math/rand"
 	"net/http"
 	"strconv"
-	"time"
 
 	"github.com/gin-gonic/gin"
 )
 
-func New() mystruct {
-	source := rand.NewSource(time.Now().UnixNano())
-	return mystruct{
-		myrand: rand.New(source),
-	}
-}
-
-func (r *mystruct) RandInt(c *gin.Context) {
+func (r *mystruct) HanlderRandInt(c *gin.Context) {
 	lowerString, _ := c.Params.Get("lower")
 	upperString, _ := c.Params.Get("upper")
 
@@ -33,10 +24,6 @@ func (r *mystruct) RandInt(c *gin.Context) {
 // 	echo, _ := c.Params.Get("length")
 // 	c.String(http.StatusOK, echo)
 // }
-
-func (r *mystruct) randInt(lowerBound, upperbound int64) int64 {
-	return r.myrand.Int63n(upperbound-lowerBound+1) + lowerBound
-}
 
 // func (r *mystruct) randString(length int) string {
 // 	// set default length

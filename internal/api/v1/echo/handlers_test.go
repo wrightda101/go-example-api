@@ -15,7 +15,7 @@ func setupRouter() *gin.Engine {
 	return r
 }
 
-func TestEcho(t *testing.T) {
+func TestHandlerEcho(t *testing.T) {
 	router := setupRouter()
 
 	w := httptest.NewRecorder()
