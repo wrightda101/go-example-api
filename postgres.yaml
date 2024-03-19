@@ -1,0 +1,7 @@
+host: "localhost"
+user: "example"
+pass: "example"
+port: 5432
+db_name: "test"
+ssl_mode: "disable"
+time_zone: "GMT"
